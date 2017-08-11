@@ -1,29 +1,26 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 // import before from '../pics/group2.svg';
 import markets  from '../pics/coincap.png';
 import transactions from '../pics/transactions.png';
+import wallets from '../pics/wallets.png';
+import performance from '../pics/performance.png';
 
-class WidgetImage extends Component {
+const WidgetImage = (props) => {
 
-  constructor(){
-    super()
-
-    this.state = {
-    }
-  }
-
-  changeState = () => {
-    this.setState({clicked: true});
-  }
-
-  chooseImage = () => {
-    switch (this.state.image) {
+  const chooseImage = () => {
+    switch (props.image) {
       case 'markets':
-      return <img src={markets} alt="widget"/>;
+      return <img src={markets} alt="widget" className="widget--image" />;
 
       case 'transactions':
-        return <img src={transactions}  alt="widget"/>;
+        return <img src={transactions} alt="widget" className="widget--image" />;
+
+      case 'wallets':
+        return <img src={wallets} alt="widget" className="widget--image" />;
+
+      case 'performance':
+        return <img src={performance} alt="widget" className="widget--image" />;
 
       default:
       console.log('somthing went wrong');
@@ -31,16 +28,15 @@ class WidgetImage extends Component {
     }
   }
 
-  render(){
   return (
     <div className="widget">
-      <label className="widget--title">Your {this.props.title}</label>
+      <label className="widget--title">Your {props.title}</label>
       <div className="widget--container">
-        {this.chooseImage}
+        {chooseImage()}
       </div>
     </div>
 
-  )};
+  );
 };
 
 export default WidgetImage;

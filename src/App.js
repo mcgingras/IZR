@@ -94,7 +94,7 @@ class App extends Component {
                 <main className="container">
                   <div className="inner--2-3">
                     <Widget title="Exposure" />
-                    <WidgetImage title="Performance" />
+                    <WidgetImage title="Performance" image="performance" />
                     <p> you are {this.state.verified ? 'currently' : 'not'} verified to use this feature.</p>
                   </div>
                   <div className="inner--1-3">
@@ -110,8 +110,8 @@ class App extends Component {
                 <Sidenav page={this.state.page} pageHandler={this.changePage} />
                 <main className="container">
                   <div className="inner--2-3">
-                    <Widget title="Wallets" />
-                    <WidgetImage title="Recent Transactions" />
+                    <WidgetImage title='Wallets' image="wallets" />
+                    <WidgetImage title="Recent Transactions" image="transactions" />
                     <p> you are {this.state.verified ? 'currently' : 'not'} verified to use this feature.</p>
                   </div>
                   <div className="inner--1-3">
