@@ -35,7 +35,7 @@ class App extends Component {
     this.changePage = this.changePage.bind(this)
 
     this.state = {
-      verified: false,
+      verified: true,
       updated: false,
       web3: null,
       page: 'strategies',

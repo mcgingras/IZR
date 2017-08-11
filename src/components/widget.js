@@ -10,9 +10,9 @@ const Widget = (props) => {
     <div className="widget">
       <label className="widget--title">Your {props.title}</label>
       <div className="widget--container">
-        <h1 className="widget--container-title">$104.43</h1>
-        <FundItem urgent={false} title="Staples" />
-        <FundItem urgent={true} title="Rising Stars" />
+        <h1 className="widget--container-title">$1004.43</h1>
+        <FundItem urgent={false} title="Staples" staples={true}/>
+        <FundItem urgent={true} title="Rising Stars" staples={false} />
       </div>
     </div>
   );

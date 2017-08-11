@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Modal from './modal';
 
 import staples from '../pics/staples.svg'
-// import rising  from '../pics/rising_stars.svg'
+import rising  from '../pics/rising_stars.svg'
 
 
 
@@ -21,10 +21,11 @@ class FundItem extends Component {
     this.setState({open: !this.state.open})
   }
 
+
   render(){
     return (
       <div className="funditem">
-        <img src={staples} alt="logo" className="funditem--logo" />
+        <img src={this.props.staples ? staples : rising} alt="logo" className="funditem--logo" />
         <h1 className="funditem--title">{this.props.title}
           {this.props.urgent ? (
             <a href="#" className="urgent" onClick={this.onClick.bind(this)}> (!)</a>
