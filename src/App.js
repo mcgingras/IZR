@@ -21,6 +21,9 @@ import WidgetList from './components/widget-list';
 import WidgetAdmin from './components/widget-admin';
 import WidgetImage from './components/widget-image';
 
+// imports for dynamic data.... hopefully :0
+import KeyChart from './components/keyChart';
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -31,7 +34,7 @@ class App extends Component {
     this.changePage = this.changePage.bind(this)
 
     this.state = {
-      verified: true,
+      verified: false,
       updated: false,
       web3: null,
       page: 'strategies',
@@ -95,7 +98,6 @@ class App extends Component {
                   <div className="inner--2-3">
                     <Widget title="Exposure" />
                     <WidgetImage title="Performance" image="performance" />
-                    <p> you are {this.state.verified ? 'currently' : 'not'} verified to use this feature.</p>
                   </div>
                   <div className="inner--1-3">
                     <WidgetList title="Strategies" keys={this.state.strategies} />
@@ -111,7 +113,7 @@ class App extends Component {
                 <main className="container">
                   <div className="inner--2-3">
                     <WidgetImage title='Wallets' image="wallets" />
-                    <WidgetImage title="Recent Transactions" image="transactions" />
+                    <KeyChart title="holdings" />
                   </div>
                   <div className="inner--1-3">
                     <WidgetList title="Keys" keys={this.state.keys} />

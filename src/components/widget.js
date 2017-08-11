@@ -11,8 +11,8 @@ const Widget = (props) => {
       <label className="widget--title">Your {props.title}</label>
       <div className="widget--container">
         <h1 className="widget--container-title">$104.43</h1>
-        <FundItem urgent={false} />
-        <FundItem urgent={true} />
+        <FundItem urgent={false} title="Staples" />
+        <FundItem urgent={true} title="Rising Stars" />
       </div>
     </div>
   );

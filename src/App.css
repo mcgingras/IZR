@@ -253,3 +253,25 @@ input[type=range]::-webkit-slider-thumb {
 .change--container label{ display: block; padding: 15px 0; }
 .change--container input{ width: 90%; border: 1px solid #979797; padding: 5px; font-size: 12px; }
 .change--container textarea{ width: 90%; border: 1px solid #979797; padding: 5px; font-size: 12px; height: 120px; }
+
+
+.table{
+  width: 80%;
+  margin: 0 auto;
+
+}
+
+.table--row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #CFD5D3;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.table--row p{
+  width: 100px;
+  margin-bottom: 0px;
+  overflow: hidden;
+}

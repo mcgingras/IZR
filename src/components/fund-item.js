@@ -25,7 +25,7 @@ class FundItem extends Component {
     return (
       <div className="funditem">
         <img src={staples} alt="logo" className="funditem--logo" />
-        <h1 className="funditem--title">Staples
+        <h1 className="funditem--title">{this.props.title}
           {this.props.urgent ? (
             <a href="#" className="urgent" onClick={this.onClick.bind(this)}> (!)</a>
           ) : (
