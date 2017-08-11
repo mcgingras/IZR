@@ -5,6 +5,7 @@ import markets  from '../pics/coincap.png';
 import transactions from '../pics/transactions.png';
 import wallets from '../pics/wallets.png';
 import performance from '../pics/performance.png';
+import plugins from '../pics/plugins.png';
 
 const WidgetImage = (props) => {
 
@@ -21,6 +22,9 @@ const WidgetImage = (props) => {
 
       case 'performance':
         return <img src={performance} alt="widget" className="widget--image" />;
+
+      case 'plugins':
+        return <img src={plugins} alt = "widget" className="widget--image" />;
 
       default:
       console.log('somthing went wrong');
