@@ -150,6 +150,19 @@ class App extends Component {
               </div>
             )
 
+
+       case 'plugins':
+        return (
+            <div className="App">
+                <Sidenav page={this.state.page} pageHandler={this.changePage} verified={this.state.verified} />
+                <main className="container">
+                  <div className="inner--2-3">
+                    <WidgetImage title='Plugins' image="plugins" />
+                  </div>
+                </main>
+              </div>
+            )     
+
       default:
         console.log('something is broken');
         break;
