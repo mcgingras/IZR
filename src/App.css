@@ -67,6 +67,10 @@ code {
   color: #FFF;
 }
 
+.nav .admin{
+  background-color: black;
+}
+
 .nav--title{
   font-size: 16px;
   text-transform: uppercase;
@@ -117,6 +121,10 @@ code {
   border-bottom: none;
 }
 
+.widget--image{
+  max-width: 100%; 
+}
+
 .item--title{
   font-size: 20px;
 }
@@ -161,7 +169,7 @@ code {
   text-align: center;
 }
 
-.modal--button{
+button{
   margin: 0 auto;
   background-color: #00E6FF;
   color: #FFF;
@@ -218,3 +226,29 @@ input[type=range]::-webkit-slider-thumb {
   color: red;
   text-decoration: none;
 }
+
+.change--strategy{
+  margin: 0;
+  padding: 10px 20px;
+}
+
+.change--container{
+  display: flex;
+  box-sizing: border-box;
+}
+
+.change--logo img{
+  padding-top: 20px;
+  display: block;
+  margin: 0 auto;
+}
+
+.change--logo p{
+  text-align: center;
+  cursor: pointer;
+}
+
+.change--container div{ width: 50%; padding: 10px; }
+.change--container label{ display: block; padding: 15px 0; }
+.change--container input{ width: 90%; border: 1px solid #979797; padding: 5px; font-size: 12px; }
+.change--container textarea{ width: 90%; border: 1px solid #979797; padding: 5px; font-size: 12px; height: 120px; }

@@ -18,6 +18,8 @@ import './App.css'
 import Sidenav from './components/sidenav';
 import Widget from './components/widget';
 import WidgetList from './components/widget-list';
+import WidgetAdmin from './components/widget-admin';
+import WidgetImage from './components/widget-image';
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -30,7 +32,9 @@ class App extends Component {
 
     this.state = {
       verified: false,
+      updated: false,
       web3: null,
+      page: 'strategies',
       keys: [
         {'title': 'ERC20', 'address': '0x44ggf4fl4445050323s', 'key': 1},
         {'title': 'BTC', 'address': '0x5rrrdl44kgsl4ggkd3s', 'key': 2},
@@ -40,8 +44,7 @@ class App extends Component {
         {'title': 'Staples', 'address': 'bring stability to your portfolio.', 'key': 1},
         {'title': 'Rising Stars', 'address': 'high movement.', 'key': 2},
         {'title': 'Privacy', 'address': 'cutting edge of technology.', 'key': 3}
-      ],
-      page:'strategies'
+      ]
     }
   }
 
@@ -87,11 +90,11 @@ class App extends Component {
       case 'strategies':
         return (
             <div className="App">
-                <Sidenav page={this.state.page} pageHandler={this.changePage} />
+                <Sidenav page={this.state.page} pageHandler={this.changePage} verified={this.state.verified} />
                 <main className="container">
                   <div className="inner--2-3">
                     <Widget title="Exposure" />
-                    <Widget title="Performance" />
+                    <WidgetImage title="Performance" />
                     <p> you are {this.state.verified ? 'currently' : 'not'} verified to use this feature.</p>
                   </div>
                   <div className="inner--1-3">
@@ -108,11 +111,27 @@ class App extends Component {
                 <main className="container">
                   <div className="inner--2-3">
                     <Widget title="Wallets" />
-                    <Widget title="Recent Transactions" />
+                    <WidgetImage title="Recent Transactions" />
                     <p> you are {this.state.verified ? 'currently' : 'not'} verified to use this feature.</p>
                   </div>
                   <div className="inner--1-3">
                     <WidgetList title="Keys" keys={this.state.keys} />
+                  </div>
+                </main>
+              </div>
+            )
+
+      case 'adjust':
+        return (
+            <div className="App">
+                <Sidenav page={this.state.page} pageHandler={this.changePage} />
+                <main className="container">
+                  <div className="inner--2-3">
+                    <WidgetAdmin title="Adjustments" />
+                    <p> you are {this.state.verified ? 'currently' : 'not'} verified to use this feature.</p>
+                  </div>
+                  <div className="inner--1-3">
+                    <WidgetList title="Keys" keys={this.state.strategies} />
                   </div>
                 </main>
               </div>
@@ -124,8 +143,7 @@ class App extends Component {
                 <Sidenav page={this.state.page} pageHandler={this.changePage} />
                 <main className="container">
                   <div className="inner--2-3">
-                    <Widget title="Markets" />
-                    <p> you are {this.state.verified ? 'currently' : 'not'} verified to use this feature.</p>
+                    <WidgetImage title="Markets" image="markets" />
                   </div>
                   <div className="inner--1-3">
                     <WidgetList title="Keys" keys={this.state.keys} />
