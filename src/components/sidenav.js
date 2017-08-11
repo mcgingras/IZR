@@ -21,7 +21,7 @@ const Sidenav = (props) => {
     <div className={props.verified ? 'nav admin' : 'nav'}>
       <h4 className="nav--title">Portfolio</h4>
       <a href="" className="nav--item" onClick={setPage('strategies')}>Strategies</a>
-      <a href="" className="nav--item" onClick={setPage('adjust')}>Adjust Strategy</a>
+      {props.verified ? <a href="" className="nav--item" onClick={setPage('adjust')}>Adjust Strategy</a> : ''}
       <a href="" className="nav--item" onClick={setPage('wallets')}>Wallets</a>
       <a href="" className="nav--item" onClick={setPage('markets')}>Markets</a>
       <h4 className="nav--title">Settings</h4>

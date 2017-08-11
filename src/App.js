@@ -31,7 +31,7 @@ class App extends Component {
     this.changePage = this.changePage.bind(this)
 
     this.state = {
-      verified: false,
+      verified: true,
       updated: false,
       web3: null,
       page: 'strategies',
@@ -112,7 +112,6 @@ class App extends Component {
                   <div className="inner--2-3">
                     <WidgetImage title='Wallets' image="wallets" />
                     <WidgetImage title="Recent Transactions" image="transactions" />
-                    <p> you are {this.state.verified ? 'currently' : 'not'} verified to use this feature.</p>
                   </div>
                   <div className="inner--1-3">
                     <WidgetList title="Keys" keys={this.state.keys} />
@@ -128,7 +127,6 @@ class App extends Component {
                 <main className="container">
                   <div className="inner--2-3">
                     <WidgetAdmin title="Adjustments" />
-                    <p> you are {this.state.verified ? 'currently' : 'not'} verified to use this feature.</p>
                   </div>
                   <div className="inner--1-3">
                     <WidgetList title="Keys" keys={this.state.strategies} />
