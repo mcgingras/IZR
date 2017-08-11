@@ -23,6 +23,7 @@ import WidgetImage from './components/widget-image';
 
 // imports for dynamic data.... hopefully :0
 import KeyChart from './components/keyChart';
+import Market from './components/market-live';
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -109,7 +110,7 @@ class App extends Component {
       case 'wallets':
         return (
             <div className="App">
-                <Sidenav page={this.state.page} pageHandler={this.changePage} />
+                <Sidenav page={this.state.page} pageHandler={this.changePage} verified={this.state.verified} />
                 <main className="container">
                   <div className="inner--2-3">
                     <WidgetImage title='Wallets' image="wallets" />
@@ -125,7 +126,7 @@ class App extends Component {
       case 'adjust':
         return (
             <div className="App">
-                <Sidenav page={this.state.page} pageHandler={this.changePage} />
+                <Sidenav page={this.state.page} pageHandler={this.changePage} verified={this.state.verified} />
                 <main className="container">
                   <div className="inner--2-3">
                     <WidgetAdmin title="Adjustments" />
@@ -140,13 +141,10 @@ class App extends Component {
       case 'markets':
         return (
             <div className="App">
-                <Sidenav page={this.state.page} pageHandler={this.changePage} />
+                <Sidenav page={this.state.page} pageHandler={this.changePage} verified={this.state.verified} />
                 <main className="container">
-                  <div className="inner--2-3">
-                    <WidgetImage title="Markets" image="markets" />
-                  </div>
-                  <div className="inner--1-3">
-                    <WidgetList title="Keys" keys={this.state.keys} />
+                  <div className="inner--3-3">
+                    <Market title="Markets"/>
                   </div>
                 </main>
               </div>

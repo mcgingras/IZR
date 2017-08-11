@@ -8,17 +8,17 @@ class KeyChart extends Component {
 
     this.state = {
       eth: [],
-      tokens: []
+      tokens: [],
     }
   }
 
-  componentDidMount() {
-    axios.get('https://api.ethplorer.io/getAddressInfo/0xfDD21E588dC96D9A9BFE2AfC619E952C09a1846e?apiKey=freekey')
+  updateAddress(token){
+    axios.get('https://api.ethplorer.io/getAddressInfo/'+token+'?apiKey=freekey')
       .then(res => {
         console.log(res);
         this.setState({eth: res.data.ETH, tokens: res.data.tokens});
      });
-  };
+  }
 
   renderTokens(){
     return this.state.tokens.map(token =>
@@ -50,6 +50,8 @@ class KeyChart extends Component {
       <div className="widget">
         <label className="widget--title">Your {this.props.title}</label>
         <div className="widget--container">
+          <input type='text' value="0xfDD21E588dC96D9A9BFE2AfC619E952C09a1846e"/>
+          <button onClick={this.updateAddress('0xfDD21E588dC96D9A9BFE2AfC619E952C09a1846e')}>enter</button>
           <div className="table js--table">
             <div className="table--row">
               <p className="row--title">COIN NAME</p>

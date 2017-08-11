@@ -15,7 +15,7 @@ const Modal = (props) => {
       <div className="modal--inner">
         <img src={graph} alt="group" className="graph--placeholder" />
         <p className="modal--status">Rising Stars will be equally balanced.</p>
-        <button className="modal--button">Accept</button>
+        <p>Send to: 0xfDD21E588dCa1846e</p>
       </div>
 
     </div>

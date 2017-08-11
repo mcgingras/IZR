@@ -51,6 +51,7 @@
   "dependencies": {
     "chart.js": "^2.6.0",
     "dotenv": "^2.0.0",
+    "jquery": "^3.2.1",
     "react": "^15.4.2",
     "react-chartjs": "^0.8.0",
     "react-chartjs-2": "^2.5.6",
